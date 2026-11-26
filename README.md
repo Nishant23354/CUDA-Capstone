@@ -11,7 +11,7 @@ I wanted to apply GPU programming to a practical signal-processing workload and 
 - Generates reproducible noisy signals (seed 42) with a configurable number of signals, samples, sample rate, noise level, and output path.
 - Runs an FFT low-pass filter on the CPU with FFTW and on the GPU with CUDA and cuFFT.
 - Writes filtered CSV files and measures processing time.
-- Includes benchmark tables and plots from the completed runs under `results/`.
+- Includes benchmark CSV tables and vector plots from the completed runs under `results/`.
 
 The GPU implementation uses batched cuFFT transforms and CUDA kernels for frequency-bin filtering and normalization. This is GPU code; the CPU implementation is provided as a baseline, not as a substitute for the CUDA implementation.
 
@@ -26,11 +26,17 @@ Compute speedup compares CPU processing time with GPU compute time. End-to-end s
 
 The included accuracy CSV reports zero maximum absolute error, mean absolute error, and RMSE at the saved CSV precision. See `results/accuracy_results.csv` and `results/final_performance.csv`.
 
+## Results plots
+
+![CPU and GPU runtime comparison](results/graphs/final_performance.svg)
+
+![GPU compute and end-to-end speedup](results/graphs/speedup.svg)
+
 ## Repository contents
 
 - `signal_generator.cpp`, `cpu_processing.cpp`, `gpu_processing.cu`: source code.
 - `run.sh`: build and execute both workload sizes.
-- `results/`: compact benchmark CSV files and PNG plots from the submitted execution.
+- `results/`: compact benchmark CSV files and SVG performance plots from the submitted execution.
 - `data/` and `output/`: generated at runtime; large generated CSVs are intentionally not checked in. Run the generator and processing programs to recreate them.
 - `project_description.md`: project write-up.
 - `PRESENTATION.md`: 5–10 minute demonstration outline.
@@ -92,4 +98,5 @@ The included `run.sh` regenerates the workloads and outputs. Runtime measurement
 ## License
 
 No license was provided in the original project. Add a license if you want others to reuse or redistribute this code.
+
 
