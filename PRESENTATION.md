@@ -20,7 +20,7 @@ Show the requirements in `README.md`, verify the environment with `nvcc --versio
 
 ### 4:15–5:45 — Proof and results
 
-Show `results/graphs/signal_comparison.png` and `results/final_performance.csv`. For 256 signals, GPU compute is 1.75 ms versus CPU 7.62 ms (4.36x), but GPU end-to-end is 9.50 ms. For 1,024 signals, compute is 6.72 ms versus CPU 32.90 ms (4.90x), while end-to-end is 37.80 ms. Explain that transfers dominate this recorded workload.
+Show `results/graphs/final_performance.svg` and `results/final_performance.csv`. For 256 signals, GPU compute is 1.75 ms versus CPU 7.62 ms (4.36x), but GPU end-to-end is 9.50 ms. For 1,024 signals, compute is 6.72 ms versus CPU 32.90 ms (4.90x), while end-to-end is 37.80 ms. Explain that transfers dominate this recorded workload.
 
 ### 5:45–6:30 — Accuracy
 
@@ -33,4 +33,5 @@ Summarize learning: batched cuFFT, CUDA kernels, memory management, and measurin
 ## Live demonstration fallback
 
 If a CUDA GPU is unavailable during the presentation, present the source, committed benchmark CSVs, and graphs as proof of the completed execution. State that the original environment was Google Colab; its exact GPU model was not captured in the supplied project archive.
+
 
