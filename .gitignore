@@ -1,0 +1,7 @@
+# Generated executables and data
+/signal_generator
+/cpu_processing
+/gpu_processing
+/data/*.csv
+/output/*.csv
+
